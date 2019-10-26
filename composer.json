@@ -1,0 +1,14 @@
+{
+    "name": "teste/teste",
+    "description": "guzzle teste",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Julio Verissimo",
+            "email": "julio_verissimo@hotmail.com.br"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    }
+}
