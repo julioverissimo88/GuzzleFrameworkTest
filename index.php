@@ -5,6 +5,9 @@ require 'vendor/autoload.php';
 
 use GuzzleHttp\Client;
 
+//MAX TABLE COLLUM
+define('MAX_COLLUMN_TABLE', 6);
+
 //Config pages
 $client = new Client([
     'base_uri' => 'http://www.guiatrabalhista.com.br',
@@ -25,12 +28,10 @@ $matriz = [];
 $td = $doc->getElementsByTagName('td');
 
 $data = [];
-$row = 0;
 $collum = 0;
 
 foreach ($td as $collumns) {
     // print_r($collumns);
-    $row++;
     $collum++;
 
     // echo "{$collumns->textContent} coluna {$collum}";
@@ -55,7 +56,7 @@ foreach ($td as $collumns) {
             break;
     }
 
-    if ($collum == 6) {
+    if ($collum == MAX_COLLUMN_TABLE) {
         array_push($matriz, $data);
         $collum = 0;
     }
